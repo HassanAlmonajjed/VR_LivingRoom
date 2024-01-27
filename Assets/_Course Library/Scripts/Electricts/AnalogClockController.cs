@@ -21,20 +21,20 @@ public class AnalogClockController : MonoBehaviour
     private void UpdateSeconds(DateTime time)
     {
         float angle = CalculateSecondsAngle(time.Second);
-        _SecondPointer.rotation = CreateRotationFromAngle(angle);
+        _SecondPointer.localRotation = CreateRotationFromAngle(angle);
     }
 
     private void UpdateMinutes(DateTime time)
     {
         float angle = CalculateSecondsAngle(time.Minute);
 
-        _minutesPointer.rotation = CreateRotationFromAngle(angle);
+        _minutesPointer.localRotation = CreateRotationFromAngle(angle);
     }
 
     private void UpdateHours(DateTime time)
     {
         float angle = CalculateAngle(time);
-        _hoursPointer.rotation = CreateRotationFromAngle(angle);
+        _hoursPointer.localRotation = CreateRotationFromAngle(angle);
 
         static float CalculateAngle(DateTime time) => (time.Hour * 30) + 90;
     }
